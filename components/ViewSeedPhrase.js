@@ -44,22 +44,21 @@ const styles = StyleSheet.create({
   },
   rectanglesContainer: {
     flexDirection: 'row',
-    width: 303,
     alignItems: 'center',
     justifyContent: 'space-between',
+    width: '100%',
     marginBottom: 20,
   },
   rectangle: {
+    width: 50,
     height: 8,
-    flex: 1,
     borderRadius: 2,
     backgroundColor: '#222531',
-    marginHorizontal: 2,
   },
   title: {
     fontFamily: 'Poppins',
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: '600',
     lineHeight: 28,
     background: 'linear-gradient(91deg, #A9CDFF 0%, #72F6D1 21.87%, #A0ED8D 55.73%, #FED365 81.77%, #FAA49E 100%)',
     backgroundClip: 'text',
@@ -67,12 +66,11 @@ const styles = StyleSheet.create({
     WebkitTextFillColor: 'transparent',
     marginBottom: 10,
     textAlign: 'center',
-    color:'#FEBF32'
   },
   description: {
     width: 327,
     color: '#ABAFC4',
-
+    fontFamily: 'Poppins',
     fontSize: 14,
     lineHeight: 24,
     textAlign: 'center',
@@ -91,9 +89,9 @@ const styles = StyleSheet.create({
   },
   revealText: {
     color: '#FFF',
-
+    fontFamily: 'Poppins',
     fontSize: 14,
-    fontWeight: '700',
+    fontWeight: '600',
     lineHeight: 24,
     marginBottom: 10,
   },
@@ -101,28 +99,22 @@ const styles = StyleSheet.create({
     width: 279,
     color: '#ABAFC4',
     textAlign: 'center',
-  
+    fontFamily: 'Poppins',
     fontSize: 12,
     lineHeight: 18,
     marginBottom: 20,
-    fontWeight: '600',
   },
- viewButton: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  padding: 13,
-  borderWidth: 3,
-  borderColor: "#FEBF32",
-  borderRadius: 3,
-  shadowColor: "#000",
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.25,
-  shadowRadius: 3.84,
-  elevation: 5, // For Android
-},
-
+  viewButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    borderColor:'#FEBF32',
+    borderWidth:5,
+    borderRadius:3
+  },
   viewButtonText: {
     color: '#FEBF32',
+    fontFamily: 'Poppins',
     fontSize: 16,
     fontWeight: '600',
     lineHeight: 24,

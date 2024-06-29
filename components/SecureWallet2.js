@@ -11,7 +11,7 @@ const SecureWallet2 = ({ navigation }) => {
       </View>
       
       <Text style={styles.title}>
-        Secure Your Wallet
+        Secure Your CC Wallet
       </Text>
 
       <Text style={styles.subtitle}>

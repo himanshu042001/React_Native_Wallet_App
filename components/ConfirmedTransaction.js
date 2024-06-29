@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import * as Font from 'expo-font';
 
 const ReceivedTransaction = ({ route }) => {
   const { transaction } = route.params;
@@ -18,10 +19,10 @@ const ReceivedTransaction = ({ route }) => {
       <View style={styles.upperSection}>
         <View style={styles.header}>
           <Image source={require('../assets/girl.png')} style={styles.profileImage} />
-          <View style={styles.networkContainer}>
+          {/* <View style={styles.networkContainer}>
             <Text style={styles.networkText}>Ethereum Main</Text>
             <FontAwesome name="chevron-down" size={12} color="#FFF" />
-          </View>
+          </View> */}
         </View>
 
         <Text style={styles.balanceText}>9.2362 ETH</Text>

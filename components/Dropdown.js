@@ -1,24 +1,31 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import * as Font from 'expo-font';
 
 const Dropdown = ({ isVisible, onClose, selectedNetwork, onSelectNetwork }) => {
+  const networks = [
+    'Ethereum Main',
+    'Ropsten ',
+    'Kovan ',
+    'Goerli ',
+  ];
+
   return (
     <Modal visible={isVisible} transparent={true} animationType="slide">
       <View style={styles.modalContainer}>
         <View style={styles.dropdownContainer}>
           <Text style={styles.headerText}>Network</Text>
-          <Text style={styles.selectedNetwork}>{selectedNetwork}</Text>
-          {/* Example of selecting a network */}
-          <TouchableOpacity style={styles.networkOption} onPress={() => onSelectNetwork('Ropsten Test')}>
-            <Text style={styles.networkOptionText}>• Ropsten Test</Text>
+          <TouchableOpacity style={styles.networkOptionSelected} onPress={() => onSelectNetwork(selectedNetwork)}>
+            <Text style={styles.networkOptionSelectedText}>
+              {selectedNetwork} <FontAwesome name="check" size={14} color="#76E268" />
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.networkOption} onPress={() => onSelectNetwork('Kovan Test')}>
-            <Text style={styles.networkOptionText}>• Kovan Test</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.networkOption} onPress={() => onSelectNetwork('Goerli Test')}>
-            <Text style={styles.networkOptionText}>• Goerli Test</Text>
-          </TouchableOpacity>
+          {networks.filter(network => network !== selectedNetwork).map((network, index) => (
+            <TouchableOpacity key={index} style={styles.networkOption} onPress={() => onSelectNetwork(network)}>
+              <Text style={styles.networkOptionText}>• {network}</Text>
+            </TouchableOpacity>
+          ))}
           {/* Close button */}
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <Text style={styles.closeButtonText}>Close</Text>
@@ -33,22 +40,29 @@ const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
+    paddingTop: 100, // Gap from the top
   },
   dropdownContainer: {
     backgroundColor: '#1E1E24',
     padding: 16,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderRadius: 20,
+    marginHorizontal: 16,
+    borderColor: '#FEBF32',
+    borderWidth: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 5,
   },
   headerText: {
-    flex: 1,
-    color: '#FFF',
+    color: '#FEBF32',
     textAlign: 'center',
     fontFamily: 'Poppins',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
-    lineHeight: 24,
+    marginBottom: 16,
   },
   selectedNetwork: {
     color: '#FFF',
@@ -57,9 +71,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '400',
     lineHeight: 24,
+   
+  },
+  networkOptionSelected: {
+    marginBottom: 16,
+    alignSelf: 'center',
+  },
+  networkOptionSelectedText: {
+    color: '#76E268',
+    fontFamily: 'Poppins',
+    fontSize: 16,
+    fontWeight: '600',
   },
   networkOption: {
-    marginTop: 8,
+    marginVertical: 8,
     alignSelf: 'center',
   },
   networkOptionText: {

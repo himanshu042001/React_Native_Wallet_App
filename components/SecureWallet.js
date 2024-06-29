@@ -25,7 +25,7 @@ const SecureWallet = () => {
       <Image source={require('../assets/shield.png')} style={styles.image} />
 
       {/* Secure Your Wallet text */}
-      <Text style={styles.title}>Secure Your Wallet</Text>
+      <Text style={styles.title}>Secure Your CC Wallet</Text>
 
       {/* Description text 1 */}
       <Text style={styles.description}>

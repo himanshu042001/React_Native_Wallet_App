@@ -18,10 +18,10 @@ export default function WalletSetup() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/illust.png')} style={styles.image} />
-      <Text style={styles.title}>Wallet setup</Text>
+      <Image source={require('../assets/flogo.png')} style={styles.image} />
+      <Text style={styles.title}>CC Wallet </Text>
       <TouchableOpacity style={styles.buttonGray}>
-        <Text style={styles.buttonGrayText}>Import Using Seed Phrase</Text>
+        <Text style={styles.buttonGrayText} onPress={() => navigation.navigate('CreatePasswordImport')}>Import Using Seed Phrase</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.buttonYellow} onPress={() => navigation.navigate('CreatePassword')}>
         <Text style={styles.buttonYellowText}>Create a New Wallet</Text>

@@ -5,7 +5,7 @@ import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function CreatePassword() {
+export default function CreatePasswordImport() {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isChecked, setChecked] = useState(false);
@@ -37,10 +37,11 @@ export default function CreatePassword() {
     try {
       await AsyncStorage.setItem('userPassword', newPassword);
       Alert.alert('Success', 'Password has been created and stored.');
-      navigation.navigate('SecureWallet');
+      navigation.navigate('ImportSeedPhrase');
     } catch (error) {
       Alert.alert('Error', 'Failed to store the password.');
     }
+  
   };
 
   const handleGoToMainPage = () => {
